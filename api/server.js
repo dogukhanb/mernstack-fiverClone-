@@ -8,7 +8,6 @@ import morgan from "morgan";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
-// env dosyasındaki veriler erişmek için kurulum
 dotenv.config();
 
 // veritabanı ile bağlantı kur
@@ -34,7 +33,7 @@ app.use(morgan("dev"));
 //d) çerezleri işler ve erişilebilir hale getirir
 app.use(cookieParser());
 
-//* route tanımlama
+// route tanımlama
 app.use("/api/auth", authRouter);
 app.use("/api/gig", gigRouter);
 app.use("/api/review", reviewRouter);
@@ -53,7 +52,7 @@ app.use((err, req, res, next) => {
   });
 });
 
-// hangi portun dinleniceğini belirleyelim
+// hangi portun dinleniceğini belirle
 app.listen(process.env.PORT, () => {
   console.log(`API ${process.env.PORT} portu dinlemeye başladı`);
 });
